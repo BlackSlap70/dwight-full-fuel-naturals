@@ -58,3 +58,79 @@ section {
   display: block;
 }
 
+/* Footer and Social Media Styles */
+footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #4CAF50 100%);
+  color: white;
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.social-media {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-media h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.social-link.facebook:hover { background: rgba(59, 89, 152, 0.8); }
+.social-link.instagram:hover { background: rgba(225, 48, 108, 0.8); }
+.social-link.twitter:hover { background: rgba(29, 161, 242, 0.8); }
+.social-link.youtube:hover { background: rgba(255, 0, 0, 0.8); }
+.social-link.linkedin:hover { background: rgba(0, 119, 181, 0.8); }
+.social-link.tiktok:hover { background: rgba(255, 0, 80, 0.8); }
+
+.footer-info {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+/* Responsive Design for Social Links */
+@media (max-width: 768px) {
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  footer {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .social-link {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
