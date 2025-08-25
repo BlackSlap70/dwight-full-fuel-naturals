@@ -1,73 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dwight Full Fuel Naturals</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Plant-powered wellness for vibrant living. Natural supplements, superfood blends, and herbal teas for optimal health.">
 </head>
 <body>
-  <header>
-    <h1>Dwight Full Fuel Naturals</h1>
-    <p>Plant-powered wellness for vibrant living</p>
+  <!-- Top horizontal bar of the F -->
+  <header class="f-header">
+    <nav class="f-navigation">
+      <div class="logo">Dwight Full Fuel Naturals</div>
+      <ul class="nav-links">
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
+    <div class="hero-banner">
+      <h1>Plant-powered wellness for vibrant living</h1>
+      <p class="hero-subtitle">Fuel your body with nature's finest ingredients</p>
+    </div>
   </header>
 
-
-
-  <main>
-    <section>
-      <h2>Our Mission</h2>
-      <p>We believe in fueling your body with nature's finest ingredients.</p>
+  <main class="f-content">
+    <!-- Second horizontal bar of the F -->
+    <section id="mission" class="f-secondary-bar">
+      <div class="mission-highlight">
+        <h2>Our Mission</h2>
+        <p>We believe in fueling your body with nature's finest ingredients for optimal health and vitality.</p>
+      </div>
     </section>
 
-    <section class="products">
-      <h2>Our Products</h2>
-      <div class="product-grid">
-        <div class="product-item">
-          <img src="images/product-1.jpg" alt="Natural Product 1" loading="lazy">
+    <!-- Vertical left side of the F with right content -->
+    <section id="products" class="f-main-content">
+      <aside class="f-sidebar">
+        <h3>Categories</h3>
+        <ul class="category-list">
+          <li><a href="#superfood">Superfood Blends</a></li>
+          <li><a href="#teas">Herbal Teas</a></li>
+          <li><a href="#supplements">Natural Supplements</a></li>
+          <li><a href="#protein">Protein Powders</a></li>
+          <li><a href="#shots">Wellness Shots</a></li>
+        </ul>
+        
+        <div class="sidebar-cta">
+          <h4>Featured</h4>
+          <p>🌿 New Organic Blend</p>
+          <button class="cta-button" type="button">Learn More</button>
         </div>
-        <div class="product-item">
-          <img src="images/product-2.jpg" alt="Natural Product 2" loading="lazy">
-        </div>
-        <div class="product-item">
-          <img src="images/product-3.jpg" alt="Natural Product 3" loading="lazy">
-        </div>
-        <div class="product-item">
-          <img src="images/product-4.jpg" alt="Natural Product 4" loading="lazy">
-        </div>
-        <div class="product-item">
-          <img src="images/product-5.jpg" alt="Natural Product 5" loading="lazy">
-        </div>
-        <div class="product-item">
-          <img src="images/product-6.jpg" alt="Natural Product 6" loading="lazy">
-        </div>
-        <div class="product-item">
-          <img src="images/product-7.jpg" alt="Natural Product 7" loading="lazy">
+      </aside>
+
+      <div class="f-content-area">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+          <div class="product-item featured">
+            <img src="images/product-1.jpg" alt="Premium Superfood Blend - Energizing morning blend" loading="lazy" width="300" height="200">
+            <h3>Premium Superfood Blend</h3>
+            <p>Energizing morning blend</p>
+            <button class="product-btn" type="button">Shop Now</button>
+          </div>
+          <div class="product-item">
+            <img src="images/product-2.jpg" alt="Herbal Wellness Tea - Calming evening blend" loading="lazy" width="300" height="200">
+            <h3>Herbal Wellness Tea</h3>
+            <p>Calming evening blend</p>
+            <button class="product-btn" type="button">Shop Now</button>
+          </div>
+          <div class="product-item">
+            <img src="images/product-3.jpg" alt="Plant Protein Power - Complete amino profile" loading="lazy" width="300" height="200">
+            <h3>Plant Protein Power</h3>
+            <p>Complete amino profile</p>
+            <button class="product-btn" type="button">Shop Now</button>
+          </div>
+          <div class="product-item">
+            <img src="images/product-4.jpg" alt="Immunity Booster - Natural defense support" loading="lazy" width="300" height="200">
+            <h3>Immunity Booster</h3>
+            <p>Natural defense support</p>
+            <button class="product-btn" type="button">Shop Now</button>
+          </div>
+          <div class="product-item">
+            <img src="images/product-5.jpg" alt="Digestive Wellness - Gut health formula" loading="lazy" width="300" height="200">
+            <h3>Digestive Wellness</h3>
+            <p>Gut health formula</p>
+            <button class="product-btn" type="button">Shop Now</button>
+          </div>
+          <div class="product-item">
+            <img src="images/product-6.jpg" alt="Energy Elixir - Natural vitality boost" loading="lazy" width="300" height="200">
+            <h3>Energy Elixir</h3>
+            <p>Natural vitality boost</p>
+            <button class="product-btn" type="button">Shop Now</button>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer id="connect" class="f-footer">
     <section class="social-media">
       <h3>Connect With Us</h3>
       <div class="social-links">
-        <a href="https://facebook.com/dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link facebook">
+        <a href="https://facebook.com/dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link facebook" aria-label="Follow us on Facebook">
           📘 Facebook
         </a>
-        <a href="https://instagram.com/dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link instagram">
+        <a href="https://instagram.com/dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link instagram" aria-label="Follow us on Instagram">
           📷 Instagram
         </a>
-        <a href="https://twitter.com/dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link twitter">
+        <a href="https://twitter.com/dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link twitter" aria-label="Follow us on Twitter">
           🐦 Twitter
         </a>
-        <a href="https://youtube.com/@dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link youtube">
+        <a href="https://youtube.com/@dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link youtube" aria-label="Subscribe to our YouTube channel">
           📺 YouTube
         </a>
-        <a href="https://linkedin.com/company/dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link linkedin">
+        <a href="https://linkedin.com/company/dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link linkedin" aria-label="Connect on LinkedIn">
           💼 LinkedIn
         </a>
-        <a href="https://tiktok.com/@dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link tiktok">
+        <a href="https://tiktok.com/@dwightfullfeelnaturals" target="_blank" rel="noopener" class="social-link tiktok" aria-label="Follow us on TikTok">
           🎵 TikTok
         </a>
       </div>
@@ -78,6 +126,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
