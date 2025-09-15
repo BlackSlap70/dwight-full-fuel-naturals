@@ -4,7 +4,8 @@
   "description": "A plant-powered wellness site focused on vibrant living and natural nourishment.  \r Built with HTML, CSS, and JavaScript.",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-config": "echo 'Creating config...'"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/YOUR-USERNAME/dwight-full-fuel-naturals/issues"
   },
-  "homepage": "https://github.com/YOUR-USERNAME/dwight-full-fuel-naturals#readme"
+  "homepage": "https://github.com/YOUR-USERNAME/dwight-full-fuel-naturals#readme",
+  "devDependencies": {
+    "eslint": "^9.33.0"
+  }
 }
