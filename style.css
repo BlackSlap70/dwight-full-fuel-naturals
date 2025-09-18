@@ -119,6 +119,68 @@ body, html {
 .main-content {
   flex: 1;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-header {
+  background-color: royalblue;
+  padding: 10px 20px;
+}
+
+.top-nav a {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  flex: 1;
+  background: linear-gradient(to bottom, royalblue, green);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  background-color: yellow;
+  color: red;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  align-items: center;
+}
+
+.footer-left {
+  color: gold;
+}
+
+.footer-center a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-right .social-icon {
+  margin-left: 10px;
+  font-size: 1.2em;
 }
 
 .founder-card {

@@ -45,3 +45,7 @@ function showFeedback(message, type = 'info') {
     feedback.className = 'feedback';
   }, 3000);
 }
+
+function fuelUp() {
+  alert("Thanks for choosing Dwight Full Fuel Naturals!");
+}
