@@ -46,11 +46,11 @@ body, html {
 }
 
 .hero-strip {
-  background: var(--blue);
+  background: linear-gradient(to bottom, royalblue 0%, mediumseagreen 50%, green 100%);
   padding: 20px 30px;
   text-align: center;
-  border-bottom: 2px solid var(--gold);
-  color: var(--white);
+  border-bottom: 2px solid #FFD700;
+  color: white;
   font-size: 1.3em;
 }
 
@@ -60,13 +60,17 @@ body, html {
 }
 
 .left-sidebar {
-  width: 300px;
-  background: #f8f8f8;
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  height: 1080px;
+  background: royalblue;
   border-right: 2px solid var(--gold);
   padding: 30px 20px;
   position: sticky;
   top: 0;
-  height: fit-content;
+  color: white;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -240,6 +244,14 @@ body, html {
   columns: 2;
   column-gap: 30px;
   column-rule: 1px solid #ddd;
+}
+
+.fuel-description {
+  max-width: 600px;
+  margin-top: 20px;
+  font-size: 1.1em;
+  text-align: center;
+  color: white;
 }
 
 @media (max-width: 768px) {

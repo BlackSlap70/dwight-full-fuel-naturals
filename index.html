@@ -5,80 +5,384 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dwight Full Fuel Naturals</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5faff;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: royalblue;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo .dwight {
+      font-size: 2em;
+      font-weight: bold;
+      color: gold;
+      display: block;
+    }
+
+    .logo .fullfuel {
+      font-size: 1em;
+      color: white;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .sidebar-menu ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      margin: 0;
+    }
+
+    .sidebar-menu a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 15px 0;
+      font-size: 1.1em;
+    }
+
+    .main-content {
+      width: calc(100vw - 240px);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #fff;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hero {
+      margin: 0;
+      padding: 0;
+      flex: 1;
+      background: linear-gradient(to bottom, royalblue, green);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      min-height: 320px;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .fuel-description {
+      max-width: 600px;
+      margin-top: 20px;
+      font-size: 1.1em;
+      text-align: center;
+      color: white;
+    }
+
+    .hero button {
+      background-color: yellow;
+      color: red;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-top: 20px;
+    }
+
+    .features {
+      display: flex;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .feature {
+      flex: 1;
+      padding: 40px 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .green {
+      background-color: green;
+      color: white;
+    }
+
+    .red {
+      background-color: red;
+      color: white;
+    }
+
+    .yellow {
+      background-color: yellow;
+      color: black;
+    }
+
+    /* Carousel styles */
+    .carousel {
+      padding: 40px 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .carousel h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .card {
+      min-width: 200px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      font-size: 1.1em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .see-more {
+      background-color: royalblue;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Signup section styles */
+    .signup {
+      background-color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .signup h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .signup p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    .signup form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .signup input[type="email"] {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 250px;
+      margin-right: 10px;
+    }
+
+    .signup button {
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .footer {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 20px;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .footer-left {
+      color: gold;
+    }
+
+    .footer-center a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-right .social-icon {
+      margin-left: 10px;
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100vw;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+      }
+      .main-content {
+        width: 100vw;
+      }
+      .features {
+        flex-direction: column;
+      }
+      .feature {
+        padding: 20px 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .main-content {
+        width: 100%;
+      }
+
+      .features {
+        flex-direction: column;
+      }
+
+      .feature {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: 1.8em;
+        text-align: center;
+      }
+
+      .hero button {
+        width: 80%;
+      }
+
+      .signup form {
+        flex-direction: column;
+      }
+
+      .signup input[type="email"] {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="mockup-container">
-    <!-- Header Bar -->
-    <div class="header-bar">
-      <div class="logo-placeholder">DFN</div>
-      <div>Dwight Full Fuel Naturals</div>
-      <div>Login</div>
-    </div>
-    <!-- Hero Strip -->
-    <div class="hero-strip">
-      <strong>Welcome to a world of plant-powered vitality! Discover the best in fruits, veggies, and energizing drinks.</strong>
-    </div>
-    <!-- F-Pattern Layout -->
-    <div class="f-layout">
-      <!-- Left Sidebar -->
-      <aside class="left-sidebar">
-        <ul class="nav-menue">
-          <li>Home</li>
-          <li>About</li>
-          <li>Fruit Options</li>
-          <li>Vegetable Vitality</li>
-          <li>Drink Menu</li>
-          <li>Contact</li>
-        </ul>
-        <div class="quick_stats">
-          <h4>Quick Stats</h4>
-          <ul>
-            <li>20+ Fruit Choices</li>
-            <li>15+ Veggie Blends</li>
-            <li>10 Signature Drinks</li>
-          </ul>
-        </div>
-        <div class="social-links">
-          <a href="https://facebook.com/" target="_blank" aria-label="Facebook">Facebook</a>
-          <a href="https://instagram.com/" target="_blank" aria-label="Instagram">Instagram</a>
-          <a href="https://snapchat.com/" target="_blank" aria-label="Snapchat">Snapchat</a>
-          <a href="https://www.threads.net/" target="_blank" aria-label="Threads">Threads</a>
-          <a href="https://tiktok.com/" target="_blank" aria-label="TikTok">TikTok</a>
-          <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">LinkedIn</a>
-        </div>
-      </aside>
-      <!-- Main Content -->
-      <div class="main-content">
-        <!-- Founder Card -->
-        <div class="founder-card">
-          <img src="product-7.jpg" alt="Dwight F. - Founder" class="founder-image" />
-          <div><strong>Dwight F.</strong></div>
-          <div>Founder & Wellness Enthusiast</div>
-        </div>
-        <!-- Fruits Section -->
-        <section>
-          <h2 class="section-title">Fruit Options</h2>
-          <div class="story-content">
-            Explore our vibrant selection of fruits: apples, bananas, mangoes, berries, and more. Each fruit is handpicked for maximum freshness and nutrition. Enjoy them as snacks or in our signature fruit bowls!
-          </div>
-        </section>
-        <!-- Veggie Section -->
-        <section>
-          <h2 class="section-title">Vegetable Vitality</h2>
-          <div class="story-content">
-            Power up with our veggie blends: kale, spinach, carrots, beets, and broccoli. Our vegetables are sourced from local farms and packed with vitamins to boost your energy and immunity.
-          </div>
-        </section>
-        <!-- Drink Menu Section -->
-        <section>
-          <h2 class="section-title">Drink Menu</h2>
-          <div class="story-content">
-            Try our refreshing drinks: Green Vitality Smoothie, Berry Boost Juice, Golden Glow Turmeric Latte, and Citrus Zest Infusion. Each drink is crafted to hydrate, energize, and delight your taste buds.
-          </div>
-        </section>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="dwight">DWIGHT</span>
+        <span class="fullfuel">FULL-FUEL NATURALS</span>
       </div>
-    </div>
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero">
+        <h1>PLANT-POWERED HYDRATION</h1>
+        <p class="fuel-description">
+          Fueling your body with fruits and vegetables isn’t just smart—it’s transformative. Our blends are crafted to energize your day, support digestion, and deliver essential nutrients in every sip. Whether you're powering through a workout or just need a midday boost, Dwight Full-Fuel Naturals is your plant-powered partner.
+        </p>
+        <button onclick="alert('Thanks for choosing Dwight Full Fuel Naturals!')">FUEL UP</button>
+      </section>
+
+      <section class="features">
+        <div class="feature green">ORGANIC INGREDIENTS</div>
+        <div class="feature red">BOLD FLAVORS</div>
+        <div class="feature yellow">SUSTAINABLE PACKAGING</div>
+      </section>
+
+      <!-- Carousel Section -->
+      <section class="carousel">
+        <h2>Featured Drink Combos</h2>
+        <div class="carousel-track">
+          <div class="card">🍍 Tropical Greens</div>
+          <div class="card">🥕 Sunrise Glow</div>
+          <div class="card">🍓 Berry Beet Boost</div>
+          <div class="card">🍅 Sweet Tomato Tonic</div>
+          <div class="card">🍉 Hydration Hero</div>
+        </div>
+        <button class="see-more">See More</button>
+      </section>
+
+      <!-- Signup Section -->
+      <section class="signup">
+        <h2>Join the Fuel-Up Movement</h2>
+        <p>Get weekly wellness tips, exclusive offers, and energizing recipes straight to your inbox.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Sign Up</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-left">Dwight Full Fuel Naturals</div>
+        <div class="footer-center">
+          <a href="#">Home</a>
+          <a href="#">Shop</a>
+          <a href="#">About</a>
+        </div>
+        <div class="footer-right">
+          <a href="#"><i class="social-icon">🔵</i></a>
+          <a href="#"><i class="social-icon">🔵</i></a>
+          <a href="#"><i class="social-icon">🔵</i></a>
+        </div>
+      </footer>
+    </main>
   </div>
-  <script src="script.js"></script>
+  <script>
+    document.querySelector('.see-more').addEventListener('click', () => {
+      alert("Explore all 20 drink combinations on our full menu!");
+    });
+  </script>
 </body>
 </html>

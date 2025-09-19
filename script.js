@@ -49,3 +49,5 @@ function showFeedback(message, type = 'info') {
 function fuelUp() {
   alert("Thanks for choosing Dwight Full Fuel Naturals!");
 }
+
+<script src="script.js"></script>
