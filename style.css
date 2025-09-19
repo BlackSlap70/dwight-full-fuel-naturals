@@ -72,6 +72,15 @@ body, html {
   gap: 20px;
 }
 
+.sidebar {
+  background-color: royalblue;
+  width: 240px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .nav-menue {
   list-style: none;
   padding: 0;
@@ -125,7 +134,7 @@ body, html {
 
 .top-header {
   background-color: royalblue;
-  padding: 10px 20px;
+  padding: 20px 20px; /* 20px top/bottom for approx. 60px total height */
 }
 
 .top-nav a {
@@ -181,6 +190,16 @@ body, html {
 .footer-right .social-icon {
   margin-left: 10px;
   font-size: 1.2em;
+}
+
+.footer-right a {
+  color: white;
+  margin-left: 10px;
+  font-size: 1.5em;
+  transition: color 0.2s;
+}
+.footer-right a:hover {
+  color: gold;
 }
 
 .founder-card {
