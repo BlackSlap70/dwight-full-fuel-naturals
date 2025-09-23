@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -16,35 +26,39 @@
     .container {
       display: flex;
       height: 100vh;
-      width: 100vw;
+      width: 100%;
     }
 
     .sidebar {
       width: 240px;
-      background-color: royalblue;
-      color: white;
+      height: 100vh; /* Full viewport height */
+      background-color: #4169E1; /* Royal Blue */
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 20px;
+      align-items: center;
+      box-sizing: border-box;
     }
 
-    .logo {
-      text-align: center;
+    .sidebar-logo {
+  width: 100px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  display: block;
+}
+
+    .logo-text h1 {
+      color: #FFD700; /* Gold */
+      font-size: 1.8em;
+      margin: 0;
     }
 
-    .logo .dwight {
-      font-size: 2em;
-      font-weight: bold;
-      color: gold;
-      display: block;
-    }
-
-    .logo .fullfuel {
-      font-size: 1em;
+    .logo-text p {
       color: white;
+      font-size: 1em;
       margin-top: 5px;
-      display: block;
     }
 
     .sidebar-menu ul {
@@ -63,7 +77,8 @@
     }
 
     .main-content {
-      width: calc(100vw - 240px);
+      flex: 1;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -156,9 +171,11 @@
 
     .carousel-track {
       display: flex;
-      overflow-x: auto;
       gap: 20px;
       padding: 20px 0;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      max-width: 100%;
     }
 
     .card {
@@ -190,20 +207,16 @@
 
     /* Signup section styles */
     .signup {
-      background-color: #fff;
+      background: #4169E1;      /* Royal Blue */
+  color: #FFD700;           /* Gold text */
       padding: 40px 20px;
       text-align: center;
     }
 
-    .signup h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    .signup p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-    }
+    .signup h2,
+.signup p {
+  color: #FFD700;           /* Gold for headings and text */
+}
 
     .signup form {
       display: flex;
@@ -218,12 +231,14 @@
       border-radius: 4px;
       width: 250px;
       margin-right: 10px;
+      background: #fff;
+  color: #000;
     }
 
     .signup button {
       padding: 10px 20px;
-      background-color: green;
-      color: white;
+      background-color: #FFD700;
+      color: #4169E1;
       border: none;
       font-weight: bold;
       cursor: pointer;
@@ -277,6 +292,7 @@
         align-items: center;
         justify-content: space-between;
         height: auto;
+        padding: 20px 10px;
       }
       .main-content {
         width: 100vw;
@@ -286,6 +302,7 @@
       }
       .feature {
         padding: 20px 10px;
+        width: 100%;
       }
     }
 
@@ -296,13 +313,21 @@
 
       .sidebar {
         width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+      }
+
+      .sidebar-menu ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
       }
 
       .main-content {
         width: 100%;
+        padding: 0;
       }
 
       .features {
@@ -311,33 +336,87 @@
 
       .feature {
         width: 100%;
+        padding: 20px 5px;
       }
 
       .hero h1 {
-        font-size: 1.8em;
+        font-size: 1.5em;
         text-align: center;
       }
 
       .hero button {
-        width: 80%;
+        width: 90%;
+        font-size: 1em;
       }
 
       .signup form {
         flex-direction: column;
+        align-items: stretch;
       }
 
       .signup input[type="email"] {
         width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .carousel-track {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        text-align: center;
+        padding: 20px 10px;
+      }
+
+      .footer-center {
+        margin: 10px 0;
+      }
+
+      .footer-right {
+        margin-top: 10px;
       }
     }
+
+    .section-transition {
+  height: 60px;
+  background: linear-gradient(to bottom, #4169E1, #228B22); /* Royal Blue to Forest Green */
+  margin: 0;
+  border: none;
+}
+
+.animated-gradient-divider {
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(to right, #4169E1, #228B22);
+  animation: gradientShift 5s ease-in-out infinite;
+}
+
+/* Animation keyframes */
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(to right, #4169E1, #228B22);
+  }
+  50% {
+    background: linear-gradient(to right, #228B22, #4169E1);
+  }
+  100% {
+    background: linear-gradient(to right, #4169E1, #228B22);
+  }
+}
   </style>
 </head>
 <body>
   <div class="container">
     <aside class="sidebar">
-      <div class="logo">
-        <span class="dwight">DWIGHT</span>
-        <span class="fullfuel">FULL-FUEL NATURALS</span>
+      <img src="product7.jpg" alt="Dwight Full-Fuel Naturals Logo" class="sidebar-logo" />
+      <div class="logo-text">
+        <h1>Dwight’s</h1>
+        <p>Full-Fuel-Naturals</p>
       </div>
       <nav class="sidebar-menu">
         <ul>
@@ -376,6 +455,8 @@
         <button class="see-more">See More</button>
       </section>
 
+      <div class="section-transition"></div>
+
       <!-- Signup Section -->
       <section class="signup">
         <h2>Join the Fuel-Up Movement</h2>
@@ -394,7 +475,9 @@
           <a href="#">About</a>
         </div>
         <div class="footer-right">
-          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f social-icon"></i></a>
+          <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
+            <i class="fab fa-facebook-f social-icon"></i>
+          </a>
           <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter social-icon"></i></a>
           <a href="https://snapchat.com" target="_blank"><i class="fab fa-snapchat-ghost social-icon"></i></a>
           <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram social-icon"></i></a>

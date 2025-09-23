@@ -1,0 +1,6 @@
+.sidebar-logo {
+  width: 180px;   /* Increase this value as needed */
+  height: auto;   /* Keeps the aspect ratio */
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
