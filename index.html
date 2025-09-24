@@ -25,28 +25,30 @@ html, body {
 
     .container {
       display: flex;
-      height: 100vh;
+      min-height: 100vh; /* Use min-height so it grows with content */
       width: 100%;
     }
 
     .sidebar {
-      width: 240px;
-      height: 100vh; /* Full viewport height */
-      background-color: #4169E1; /* Royal Blue */
-      padding: 30px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-sizing: border-box;
+      background-color: #4169E1; /* Royal Blue or your brand blue */
+  width: 240px;              /* Fixed sidebar width */
+  min-height: 100vh;         /* At least full viewport height, grows with content */
+  margin: 0;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
     }
 
-    .sidebar-logo {
+.sidebar-logo {
   width: 100%;
-  max-width: 200px;
   height: auto;
+  max-width: 240px; /* Match the sidebar width */
   margin-bottom: 20px;
   border-radius: 8px;
   display: block;
+  object-fit: cover;
 }
 
     .logo-text h1 {
@@ -413,7 +415,7 @@ html, body {
 <body>
   <div class="container">
     <aside class="sidebar">
-      <img src="images/leftmarg@product7.jpg" alt="Dwight Full-Fuel Naturals Logo" class="sidebar-logo" />
+      <img src="images/product-2.jpg" alt="Dwight Full-Fuel Naturals Logo" class="sidebar-logo" />
       <div class="logo-text">
         <h1>Dwight’s</h1>
         <p>Full-Fuel-Naturals</p>
