@@ -4,62 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dwight Full Fuel Naturals</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    *,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  overflow-x: hidden;
-}
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; margin: 0; padding: 0; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f5faff;
     }
-
     .container {
       display: flex;
-      min-height: 100vh; /* Use min-height so it grows with content */
+      min-height: 100vh;
       width: 100%;
     }
-
     .sidebar {
-      background-color: #4169E1; /* Royal Blue or your brand blue */
-  width: 240px;              /* Fixed sidebar width */
-  min-height: 100vh;         /* At least full viewport height, grows with content */
-  margin: 0;
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+      background-color: #4169E1; /* Royal Blue */
+      width: 240px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
     }
-
+    .sidebar-logo {
+      width: 100%;
+      max-width: 200px;
+      height: 220px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      display: block;
+      background: transparent;
+    }
     .logo-text h1 {
-      color: #FFD700; /* Gold */
+      color: #FFD700;
       font-size: 1.8em;
       margin: 0;
     }
-
     .logo-text p {
       color: white;
       font-size: 1em;
       margin-top: 5px;
     }
-
     .sidebar-menu ul {
       list-style: none;
       padding: 0;
       text-align: center;
       margin: 0;
     }
-
     .sidebar-menu a {
       color: white;
       text-decoration: none;
@@ -67,7 +62,6 @@ html, body {
       margin: 15px 0;
       font-size: 1.1em;
     }
-
     .main-content {
       flex: 1;
       min-width: 0;
@@ -78,7 +72,6 @@ html, body {
       padding: 0;
       margin: 0;
     }
-
     .hero {
       margin: 0;
       padding: 0;
@@ -91,12 +84,10 @@ html, body {
       color: white;
       min-height: 320px;
     }
-
     .hero h1 {
       font-size: 2.5em;
       margin-bottom: 20px;
     }
-
     .fuel-description {
       max-width: 600px;
       margin-top: 20px;
@@ -104,7 +95,6 @@ html, body {
       text-align: center;
       color: white;
     }
-
     .hero button {
       background-color: yellow;
       color: red;
@@ -117,14 +107,12 @@ html, body {
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       margin-top: 20px;
     }
-
     .features {
       display: flex;
       width: 100%;
       margin: 0;
       padding: 0;
     }
-
     .feature {
       flex: 1;
       padding: 40px 20px;
@@ -132,35 +120,20 @@ html, body {
       font-weight: bold;
       text-align: center;
     }
-
-    .green {
-      background-color: green;
-      color: white;
-    }
-
-    .red {
-      background-color: red;
-      color: white;
-    }
-
-    .yellow {
-      background-color: yellow;
-      color: black;
-    }
-
+    .green { background-color: green; color: white; }
+    .red { background-color: red; color: white; }
+    .yellow { background-color: yellow; color: black; }
     /* Carousel styles */
     .carousel {
-      background: linear-gradient(to bottom, #4169E1, #228B22); /* Blue-Green gradient */
+      background: linear-gradient(to bottom, #4169E1, #228B22);
       padding: 40px 20px;
       text-align: center;
     }
-
     .carousel h2 {
-      color: #FFD700; /* Gold */
+      color: #FFD700;
       font-size: 2em;
       margin-bottom: 20px;
     }
-
     .carousel-track {
       display: flex;
       gap: 20px;
@@ -169,11 +142,10 @@ html, body {
       flex-wrap: nowrap;
       max-width: 100%;
     }
-
     .card {
       min-width: 200px;
-      background-color: #4169E1; /* Royal Blue */
-      color: #FFD700; /* Gold text */
+      background-color: #4169E1;
+      color: #FFD700;
       border: 2px solid #FFD700;
       border-radius: 8px;
       padding: 20px;
@@ -182,11 +154,7 @@ html, body {
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
     }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
+    .card:hover { transform: scale(1.05); }
     .see-more {
       background-color: royalblue;
       color: white;
@@ -196,26 +164,19 @@ html, body {
       cursor: pointer;
       border-radius: 4px;
     }
-
     /* Signup section styles */
     .signup {
-      background: #4169E1;      /* Royal Blue */
-  color: #FFD700;           /* Gold text */
+      background: #4169E1;
+      color: #FFD700;
       padding: 40px 20px;
       text-align: center;
     }
-
-    .signup h2,
-.signup p {
-  color: #FFD700;           /* Gold for headings and text */
-}
-
+    .signup h2, .signup p { color: #FFD700; }
     .signup form {
       display: flex;
       justify-content: center;
       gap: 10px;
     }
-
     .signup input[type="email"] {
       padding: 10px;
       font-size: 1em;
@@ -224,9 +185,8 @@ html, body {
       width: 250px;
       margin-right: 10px;
       background: #fff;
-  color: #000;
+      color: #000;
     }
-
     .signup button {
       padding: 10px 20px;
       background-color: #FFD700;
@@ -236,7 +196,6 @@ html, body {
       cursor: pointer;
       border-radius: 4px;
     }
-
     .footer {
       background-color: black;
       color: white;
@@ -246,38 +205,27 @@ html, body {
       align-items: center;
       margin-top: auto;
       width: 100%;
-      height: 120px; /* doubled from original 60px (default) */
+      height: 120px;
     }
-
-    .footer-left {
-      color: gold;
-    }
-
+    .footer-left { color: gold; }
     .footer-center a {
       margin: 0 10px;
       color: white;
       text-decoration: none;
     }
-
     .footer-right .social-icon {
       margin-left: 10px;
       font-size: 1.2em;
     }
-
     .footer-right .fa-facebook-f { color: #1877F2; }
-.footer-right .fa-twitter { color: #1DA1F2; }
-.footer-right .fa-snapchat-ghost { color: #FFFC00; }
-.footer-right .fa-instagram { color: #E1306C; }
-.footer-right .fa-linkedin-in { color: #0077B5; }
-.footer-right .fa-threads,
-.footer-right .fa-tiktok {
-  color: #fff !important;
-}
-
+    .footer-right .fa-twitter { color: #1DA1F2; }
+    .footer-right .fa-snapchat-ghost { color: #FFFC00; }
+    .footer-right .fa-instagram { color: #E1306C; }
+    .footer-right .fa-linkedin-in { color: #0077B5; }
+    .footer-right .fa-threads,
+    .footer-right .fa-tiktok { color: #fff !important; }
     @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-      }
+      .container { flex-direction: column; }
       .sidebar {
         width: 100vw;
         flex-direction: row;
@@ -286,23 +234,15 @@ html, body {
         height: auto;
         padding: 20px 10px;
       }
-      .main-content {
-        width: 100vw;
-      }
-      .features {
-        flex-direction: column;
-      }
+      .main-content { width: 100vw; }
+      .features { flex-direction: column; }
       .feature {
         padding: 20px 10px;
         width: 100%;
       }
     }
-
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-
+      .container { flex-direction: column; }
       .sidebar {
         width: 100%;
         flex-direction: column;
@@ -310,53 +250,41 @@ html, body {
         justify-content: center;
         padding: 20px 0;
       }
-
       .sidebar-menu ul {
         flex-direction: column;
         align-items: center;
         padding: 0;
       }
-
       .main-content {
         width: 100%;
         padding: 0;
       }
-
-      .features {
-        flex-direction: column;
-      }
-
+      .features { flex-direction: column; }
       .feature {
         width: 100%;
         padding: 20px 5px;
       }
-
       .hero h1 {
         font-size: 1.5em;
         text-align: center;
       }
-
       .hero button {
         width: 90%;
         font-size: 1em;
       }
-
       .signup form {
         flex-direction: column;
         align-items: stretch;
       }
-
       .signup input[type="email"] {
         width: 100%;
         margin-bottom: 10px;
       }
-
       .carousel-track {
         flex-direction: column;
         align-items: center;
         gap: 10px;
       }
-
       .footer {
         flex-direction: column;
         align-items: center;
@@ -364,57 +292,32 @@ html, body {
         text-align: center;
         padding: 20px 10px;
       }
-
-      .footer-center {
-        margin: 10px 0;
-      }
-
-      .footer-right {
-        margin-top: 10px;
-      }
+      .footer-center { margin: 10px 0; }
+      .footer-right { margin-top: 10px; }
     }
-
     .section-transition {
-  height: 60px;
-  background: linear-gradient(to bottom, #4169E1, #228B22); /* Royal Blue to Forest Green */
-  margin: 0;
-  border: none;
-}
-
-.animated-gradient-divider {
-  height: 80px;
-  width: 100%;
-  background: linear-gradient(to right, #4169E1, #228B22);
-  animation: gradientShift 5s ease-in-out infinite;
-}
-
-/* Animation keyframes */
-@keyframes gradientShift {
-  0% {
-    background: linear-gradient(to right, #4169E1, #228B22);
-  }
-  50% {
-    background: linear-gradient(to right, #228B22, #4169E1);
-  }
-  100% {
-    background: linear-gradient(to right, #4169E1, #228B22);
-  }
-}
-
-.sidebar-logo {
-  width: 200px;
-  height: 220px;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  display: block;
-}
+      height: 60px;
+      background: linear-gradient(to bottom, #4169E1, #228B22);
+      margin: 0;
+      border: none;
+    }
+    .animated-gradient-divider {
+      height: 80px;
+      width: 100%;
+      background: linear-gradient(to right, #4169E1, #228B22);
+      animation: gradientShift 5s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0% { background: linear-gradient(to right, #4169E1, #228B22); }
+      50% { background: linear-gradient(to right, #228B22, #4169E1); }
+      100% { background: linear-gradient(to right, #4169E1, #228B22); }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <aside class="sidebar">
-      <img src="images/CLEAN@NEW1.png" alt="Dwight Full-Fuel Naturals Logo" class="sidebar-logo" />
+      <img src="images/CLEAN@NEW1.png" alt="Dwight's Full Fuel Naturals Logo" class="sidebar-logo" />
       <div class="logo-text">
         <h1>Dwight’s</h1>
         <p>Full-Fuel-Naturals</p>
@@ -427,7 +330,6 @@ html, body {
         </ul>
       </nav>
     </aside>
-
     <main class="main-content">
       <section class="hero">
         <h1>PLANT-POWERED HYDRATION</h1>
@@ -436,13 +338,11 @@ html, body {
         </p>
         <button onclick="alert('Thanks for choosing Dwight Full Fuel Naturals!')">FUEL UP</button>
       </section>
-
       <section class="features">
         <div class="feature green">ORGANIC INGREDIENTS</div>
         <div class="feature red">BOLD FLAVORS</div>
         <div class="feature yellow">SUSTAINABLE PACKAGING</div>
       </section>
-
       <!-- Carousel Section -->
       <section class="carousel">
         <h2>Featured Drink Combos</h2>
@@ -455,9 +355,7 @@ html, body {
         </div>
         <button class="see-more">See More</button>
       </section>
-
       <div class="section-transition"></div>
-
       <!-- Signup Section -->
       <section class="signup">
         <h2>Join the Fuel-Up Movement</h2>
@@ -467,7 +365,6 @@ html, body {
           <button type="submit">Sign Up</button>
         </form>
       </section>
-
       <footer class="footer">
         <div class="footer-left">Dwight Full Fuel Naturals</div>
         <div class="footer-center">
