@@ -19,25 +19,47 @@
       width: 100%;
     }
     .sidebar {
-      background-color: #4169E1; /* Royal Blue */
+      background: linear-gradient(to bottom, #0077cc, #00cc99); /* Brand gradient */
       width: 240px;
       min-height: 100vh;
-      margin: 0;
-      padding: 30px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
+      padding: 30px 20px;
       box-sizing: border-box;
     }
-    .sidebar-logo {
+    .logo-wrapper {
+      position: relative;
+      width: 200px;   /* Adjust as needed for your logo */
+      height: 220px;  /* Adjust as needed for your logo */
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shield-base,
+    .shield-text {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 200px;
-      height: 220px;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      display: block;
-      background: transparent;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+    .shield-base {
+      z-index: 1;
+      filter: drop-shadow(0 0 10px rgba(0, 119, 204, 0.3)); /* Optional glow */
+    }
+    .shield-text {
+      z-index: 2;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+    /* Optional: Hover effect for shield text */
+    .logo-wrapper:hover .shield-text {
+      opacity: 1;
     }
     .logo-text h1 {
       color: #FFD700;
@@ -228,11 +250,11 @@
       .container { flex-direction: column; }
       .sidebar {
         width: 100vw;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        height: auto;
         padding: 20px 10px;
+      }
+      .logo-wrapper {
+        width: 150px;
+        height: 165px;
       }
       .main-content { width: 100vw; }
       .features { flex-direction: column; }
@@ -312,12 +334,32 @@
       50% { background: linear-gradient(to right, #228B22, #4169E1); }
       100% { background: linear-gradient(to right, #4169E1, #228B22); }
     }
+    .shield-clip {
+      clip-path: polygon(
+        50% 0%,     /* top center */
+        95% 20%,    /* top right curve */
+        100% 50%,   /* right middle */
+        80% 100%,   /* bottom right */
+        20% 100%,   /* bottom left */
+        0% 50%,     /* left middle */
+        5% 20%      /* top left curve */
+      );
+    }
   </style>
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="Dwight Full Fuel Naturals" />
+  <meta property="og:description" content="Plant-powered hydration: organic blends, bold flavors, and sustainable packaging. Energize your day the natural way!" />
+  <meta property="og:image" content="https://blackslap70.github.io/dwight-full-fuel-naturals/images/CLEAN@NEW1.png" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:type" content="website" />
 </head>
 <body>
   <div class="container">
     <aside class="sidebar">
-      <img src="images/CLEAN@NEW3.png" alt="CLEAN@NEW3.png" class="sidebar-logo" />
+      <div class="logo-wrapper">
+        <img src="images/shield-shape.png" alt="Shield Base" class="shield-base" />
+        <img src="images/shield-contents.png" alt="Shield Text/Emblem" class="shield-text" />
+      </div>
       <div class="logo-text">
         <h1>Dwight’s</h1>
         <p>Full-Fuel-Naturals</p>
