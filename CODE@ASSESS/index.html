@@ -6,228 +6,154 @@
   <title>Dwight Full Fuel Naturals</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { overflow-x: hidden; margin: 0; padding: 0; }
+    :root {
+      --royal-blue: #4169E1;
+      --deep-navy: #1C2E4A;
+      --cool-mint: #A7E8BD;
+      --golden-citrus: #FFC93C;
+      --soft-sage: #D7E4D0;
+      --bg-light: #F7FAFC;
+      --text-dark: #2B2B2B;
+    }
+
+    /* Base */
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5faff;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      font-family: 'Poppins', sans-serif;
     }
-    .container {
-      display: flex;
-      min-height: 100vh;
-      width: 100%;
-    }
+
+    /* Sidebar */
     .sidebar {
-      background: linear-gradient(to bottom, #0077cc, #00cc99); /* Brand gradient */
-      width: 240px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 30px 20px;
-      box-sizing: border-box;
+      background: linear-gradient(180deg, var(--royal-blue), var(--deep-navy));
     }
-    .logo-wrapper {
-      position: relative;
-      width: 200px;   /* Adjust as needed for your logo */
-      height: 220px;  /* Adjust as needed for your logo */
-      margin: 0 auto 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .shield-base,
-    .shield-text {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      pointer-events: none;
-    }
-    .shield-base {
-      z-index: 1;
-      filter: drop-shadow(0 0 10px rgba(0, 119, 204, 0.3)); /* Optional glow */
-    }
-    .shield-text {
-      z-index: 2;
-      opacity: 1;
-      transition: opacity 0.3s ease-in-out;
-    }
-    /* Optional: Hover effect for shield text */
-    .logo-wrapper:hover .shield-text {
-      opacity: 1;
-    }
-    .logo-text h1 {
-      color: #FFD700;
-      font-size: 1.8em;
-      margin: 0;
-    }
-    .logo-text p {
-      color: white;
-      font-size: 1em;
-      margin-top: 5px;
-    }
-    .sidebar-menu ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-      margin: 0;
-    }
-    .sidebar-menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin: 15px 0;
-      font-size: 1.1em;
-    }
-    .main-content {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background: #fff;
-      padding: 0;
-      margin: 0;
-    }
+
+    /* Hero Section */
     .hero {
-      margin: 0;
-      padding: 0;
-      flex: 1;
-      background: linear-gradient(to bottom, royalblue, green);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      min-height: 320px;
-    }
-    .hero h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-    .fuel-description {
-      max-width: 600px;
-      margin-top: 20px;
-      font-size: 1.1em;
-      text-align: center;
+      background: linear-gradient(135deg, var(--royal-blue), var(--cool-mint));
       color: white;
     }
     .hero button {
-      background-color: yellow;
-      color: red;
+      background-color: var(--golden-citrus);
+      color: var(--deep-navy);
       border: none;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      margin-top: 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
+    .hero button:hover {
+      background-color: #FFD966;
+      transform: scale(1.03);
+    }
+
+    /* Midsection (Features) */
     .features {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
-      margin: 0;
-      padding: 0;
+      background-color: var(--soft-sage);
+      text-align: center;
     }
     .feature {
       flex: 1;
-      padding: 40px 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-      text-align: center;
+      padding: 50px 20px;
+      background-color: var(--cool-mint);
+      color: var(--deep-navy);
+      margin: 8px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-    .green { background-color: green; color: white; }
-    .red { background-color: red; color: white; }
-    .yellow { background-color: yellow; color: black; }
-    /* Carousel styles */
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Carousel */
     .carousel {
-      background: linear-gradient(to bottom, #4169E1, #228B22);
-      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--royal-blue), var(--deep-navy));
+      padding: 60px 20px;
+      color: var(--golden-citrus);
       text-align: center;
     }
     .carousel h2 {
-      color: #FFD700;
-      font-size: 2em;
-      margin-bottom: 20px;
+      font-size: 2.2em;
+      margin-bottom: 30px;
     }
     .carousel-track {
       display: flex;
       gap: 20px;
-      padding: 20px 0;
       overflow-x: auto;
-      flex-wrap: nowrap;
-      max-width: 100%;
+      padding-bottom: 15px;
     }
     .card {
-      min-width: 200px;
-      background-color: #4169E1;
-      color: #FFD700;
-      border: 2px solid #FFD700;
-      border-radius: 8px;
-      padding: 20px;
-      font-size: 1.1em;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      min-width: 220px;
+      background-color: var(--cool-mint);
+      color: var(--deep-navy);
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      font-weight: 500;
       transition: transform 0.3s ease;
     }
-    .card:hover { transform: scale(1.05); }
+    .card:hover {
+      transform: translateY(-6px);
+    }
     .see-more {
-      background-color: royalblue;
-      color: white;
+      background-color: var(--golden-citrus);
+      color: var(--deep-navy);
       border: none;
-      padding: 10px 20px;
+      padding: 12px 25px;
+      border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
-      border-radius: 4px;
+      margin-top: 25px;
     }
-    /* Signup section styles */
+    .see-more:hover {
+      background-color: #FFD966;
+    }
+
+    /* Signup */
     .signup {
-      background: #4169E1;
-      color: #FFD700;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--deep-navy), var(--royal-blue));
+      color: var(--golden-citrus);
+      padding: 60px 20px;
       text-align: center;
     }
-    .signup h2, .signup p { color: #FFD700; }
-    .signup form {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
     .signup input[type="email"] {
-      padding: 10px;
-      font-size: 1em;
+      background-color: white;
+      color: var(--text-dark);
+      border-radius: 6px;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      width: 250px;
-      margin-right: 10px;
-      background: #fff;
-      color: #000;
+      padding: 12px;
+      width: 260px;
     }
     .signup button {
-      padding: 10px 20px;
-      background-color: #FFD700;
-      color: #4169E1;
+      background-color: var(--golden-citrus);
+      color: var(--deep-navy);
+      font-weight: 600;
       border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 4px;
+      border-radius: 6px;
+      padding: 12px 24px;
+      transition: background-color 0.3s ease;
     }
+    .signup button:hover {
+      background-color: #FFD966;
+    }
+
+    /* Footer */
     .footer {
-      background-color: black;
-      color: white;
+      background-color: var(--deep-navy);
+      color: var(--cool-mint);
       display: flex;
       justify-content: space-between;
-      padding: 15px 20px;
+      padding: 20px;
       align-items: center;
-      margin-top: auto;
-      width: 100%;
-      height: 120px;
+    }
+    .footer a {
+      color: var(--golden-citrus);
+      text-decoration: none;
     }
     .footer-left { color: gold; }
     .footer-center a {
