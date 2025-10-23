@@ -14,7 +14,18 @@
       --soft-sage: #D7E4D0;
       --bg-light: #F7FAFC;
       --text-dark: #2B2B2B;
-    }
+    }    git branch --show-current
+    git status
+    git fetch origin    # count commits local→remote
+    git rev-list --count origin/BRANCH..BRANCH
+    
+    # list those commits
+    git log --oneline origin/BRANCH..BRANCH
+    
+    # list files changed
+    git diff --name-only origin/BRANCH..BRANCH
+        # push and set upstream if needed
+    git push -u origin BRANCH
 
     /* Base */
     body {
