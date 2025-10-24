@@ -10,22 +10,24 @@
       --royal-blue: #4169E1;
       --deep-navy: #1C2E4A;
       --cool-mint: #A7E8BD;
-      --golden-citrus: #FFC93C;
+      --golden-citrus: #FFC93C;      $src = "C:\Users\12533\OneDrive\Desktop\dwight-full-fuel-naturals\CODE@ASSESS"
+      $dst = "C:\Users\12533\OneDrive\Desktop\dwight-full-fuel-naturals\NewLookv2"
+      
+      # remove old test copy only if you want a fresh start (safe)
+      if (Test-Path $dst) { Remove-Item $dst -Recurse -Force }
+      
+      # copy files
+      Copy-Item -Path "$src\*" -Destination $dst -Recurse -Force
+      
+      # mark the copy in index.html title
+      (Get-Content "$dst\index.html") -replace '<title>.*</title>', '<title>Dwight Full Fuel Naturals — NewLookv2</title>' | Set-Content "$dst\index.html"
+      
+      # open in VS Code
+      code $dst
       --soft-sage: #D7E4D0;
       --bg-light: #F7FAFC;
       --text-dark: #2B2B2B;
-    }    git branch --show-current
-    git status
-    git fetch origin    # count commits local→remote
-    git rev-list --count origin/BRANCH..BRANCH
-    
-    # list those commits
-    git log --oneline origin/BRANCH..BRANCH
-    
-    # list files changed
-    git diff --name-only origin/BRANCH..BRANCH
-        # push and set upstream if needed
-    git push -u origin BRANCH
+    }
 
     /* Base */
     body {
